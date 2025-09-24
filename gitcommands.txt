@@ -1,0 +1,10 @@
+Status:
+git status
+
+Pull latest change:
+git pull origin main
+
+Stage and commit your work:
+git add .
+git commit -m "Your commit message"
+git push origin main
