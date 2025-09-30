@@ -7,5 +7,5 @@ git pull origin main
 
 Stage and commit your work:
 git add .
-git commit -m "Your commit message"
+git commit -m "Push"
 git push origin main
