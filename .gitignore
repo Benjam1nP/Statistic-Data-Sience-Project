@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Dataset
+2023_Yellow_Taxi_Trip_Data.csv
