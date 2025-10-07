@@ -1,7 +1,7 @@
 import pandas as pd
 
-input_file = "Taxi_Data_improved.csv"
-output_file = "Taxi_final.csv"
+input_file = "data/Taxi_Data_improved.csv"
+output_file = "data/Taxi_final.csv"
 chunksize = 2_000_000
 
 first_chunk = True

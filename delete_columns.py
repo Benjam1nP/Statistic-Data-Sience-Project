@@ -21,8 +21,8 @@ def delete_columns(input_file, output_file, columns_to_delete):
 
 if __name__ == "__main__":
     # Example usage
-    input_file = "2023_Yellow_Taxi_Trip_Data.csv"
-    output_file = "Taxi_Data_improved.csv"
+    input_file = "data/2023_Yellow_Taxi_Trip_Data.csv"
+    output_file = "data/Taxi_Data_improved.csv"
     columns_to_delete = ["VendorID", "RatecodeID", "store_and_fwd_flag", "PULocationID", "DOLocationID", "mta_tax", "payment_type"]
 
     delete_columns(input_file, output_file, columns_to_delete)
