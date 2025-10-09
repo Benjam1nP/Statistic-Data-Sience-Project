@@ -10,6 +10,7 @@ wheels/
 .venv
 
 # Dataset
+data/
 2023_Yellow_Taxi_Trip_Data.csv
 Taxi_Data_improved.csv
 Taxi_final.csv
