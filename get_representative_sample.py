@@ -1,9 +1,9 @@
 import pandas as pd
 import random
 
-input_file = "data/Taxi_final.csv"
-output_file = "data/Taxi_sample_6M.csv"
-target_rows = 6_000_000
+input_file = "data/Taxi_Data_improved.csv"
+output_file = "data/Taxi_sample_1M.csv"
+target_rows = 1_000_000
 chunksize = 5_000_000
 
 print("Starte chunkweises Zufallssampling...")

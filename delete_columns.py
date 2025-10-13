@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # Example usage
     input_file = "data/2023_Yellow_Taxi_Trip_Data.csv"
     output_file = "data/Taxi_Data_improved.csv"
-    columns_to_delete = ["VendorID", "RatecodeID", "store_and_fwd_flag", "PULocationID", "DOLocationID", "mta_tax", "payment_type"]
+    columns_to_delete = ["VendorID", "RatecodeID", "store_and_fwd_flag", "mta_tax"]
 
     delete_columns(input_file, output_file, columns_to_delete)
     print(f"Columns {columns_to_delete} removed. New file saved as {output_file}.")
