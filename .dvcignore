@@ -1,0 +1,41 @@
+# Ignore typical system and temporary files
+
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db
+
+
+# Ignore Python cache and build artefacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+build/
+dist/
+
+# Ignore virtual environments
+
+.venv/
+venv/
+env/
+
+# Ignore Jupyter notebook checkpoints
+
+.ipynb_checkpoints/
+
+# Ignore editor and IDE files
+.vscode/
+.idea/
+
+# Ignore DVC’s own temporary files
+.dvc/tmp/
+.dvc/cache/
+
+# Ignore large raw data files that you do NOT want versioned via DVC
+# (optional — if you only want to track specific datasets manually)
+data/raw/
