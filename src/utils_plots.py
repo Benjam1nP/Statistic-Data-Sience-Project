@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import scipy.stats as stats
-from .utils_stats import fd_bins, tukey_fences
+from .utils_stats import tukey_fences
 
 """ Wir verwenden hier .dropna(), da es wir zwischen Darstellung (Plots) und Datenvorbereitung (Imputation & Regeln) unterscheiden. 
     - In utils_plots.py machen wir bewusst s = s.dropna(), weil Plot-Helper-Functions keine fachlischen Entscheidungen über fehlende Werte treffen sollen. Sie sind die Präsentationsschicht.
@@ -16,9 +16,8 @@ def set_style():
 
 def hist_kde(s, title, xlabel=None, ylabel=None, unit=None, bw_adjust_list=(0.7, 1.0, 1.8), save=None):
     s = s.dropna()
-    bins = fd_bins(s)
     plt.figure(figsize=(7.2, 4.6))
-    sns.histplot(s, bins=bins, stat="density", edgecolor="white", alpha=0.35, label=f"Hist (FD={bins})")
+    sns.histplot(s, bins="fd", stat="density", edgecolor="white", alpha=0.35)
     for bw in bw_adjust_list:
         sns.kdeplot(s, bw_adjust=bw, linewidth=2, label=f"KDE bw={bw}")
     # Labels
@@ -80,10 +79,9 @@ def plot_ecdf(s, title, xlabel=None, ylabel=None, unit=None, save=None):
 
 def hist_with_fences(s, title, xlabel=None, ylabel=None, unit=None, save=None):
     s = s.dropna()
-    bins = fd_bins(s)
     lo, hi = tukey_fences(s, 1.5)
     plt.figure(figsize=(7.2, 4.2))
-    sns.histplot(s, bins=bins, stat="density", edgecolor="white", alpha=0.35)
+    sns.histplot(s, bins="fd", stat="density", edgecolor="white", alpha=0.35)
     plt.axvline(lo, ls="--", lw=2, color="red", label=f"lo={lo:.2f}")
     plt.axvline(hi, ls="--", lw=2, color="red", label=f"hi={hi:.2f}")
     x_label = xlabel if xlabel else (f"{title}" + (f" [{unit}]" if unit else ""))
