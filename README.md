@@ -8,7 +8,7 @@
     es generiert eine ausführbare Menge an Daten, welche aus den geshuffelten Ursprungsdaten ausgewählt werden,
     diese solltne repräsentativ sein.
 
-3.  führe danachfolgendes file aus --> change_to_datetime.py (braucht 30min)
+3.  führe danachfolgendes file aus --> change_values.py (braucht 10min)
     es wechselt die Angabe von abfahrt und ankunft in datetime
 
 4.  Nach diesen Schritten sollte Taxi_final_1M.csv generiert worden sein.
