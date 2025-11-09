@@ -19,9 +19,8 @@ for chunk in pd.read_csv(input_file, chunksize=chunksize, low_memory=False):
     chunk["trip_duration"] = (chunk["tpep_dropoff_datetime"] - chunk["tpep_pickup_datetime"]).dt.total_seconds() / 60
 
     # Neue Spalte: average_speed (in km/h)
-    # Annahme: trip_distance ist in Meilen → Umrechnung in km: 1 Meile = 1.60934 km
     if "trip_distance" in chunk.columns:
-        chunk["average_speed"] = (chunk["trip_distance"] * 1.60934) / (chunk["trip_duration"] / 60)
+        chunk["average_speed"] = (chunk["trip_distance"]) / (chunk["trip_duration"] / 60)
     else:
         chunk["average_speed"] = None  # falls Spalte fehlt
 
