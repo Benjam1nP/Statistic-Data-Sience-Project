@@ -18,3 +18,8 @@ Taxi_Data_improved.csv
 Taxi_final_1M.csv
 Taxi_sample_1M.csv
 Taxi_final_1M_clean.csv
+
+# Heatmap
+#notebooks/Heatmap.ipynb
+output/*
+#*.geojson
