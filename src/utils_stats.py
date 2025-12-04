@@ -157,3 +157,24 @@ def create_na_table(df: pd.DataFrame) -> pd.DataFrame:
           .assign(percent_missing=lambda x: (x["n_missing"] / n * 100).round(1))
     )
     return out
+
+def create_outlier_table(df):
+    num_cols = df.select_dtypes(include="number")
+    results = []
+
+    for col in num_cols.columns:
+        s = num_cols[col].astype(float)
+
+        z_mask = z_score(s)
+        modz_mask = modified_z_score(s)
+        tukey_mask = tukey_outliers(s)
+
+        results.append({
+            "Spalte": col,
+            "Z-Score": int(z_mask.sum()),
+            "Modified Z-Score": int(modz_mask.sum()),
+            "Tukey IQR": int(tukey_mask.sum())
+        })
+
+    outlier_table = pd.DataFrame(results)
+    return outlier_table
